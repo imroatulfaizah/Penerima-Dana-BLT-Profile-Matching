@@ -1,17 +1,41 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_user extends CI_Model {
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class M_user extends CI_Model 
+{
     
     public function __construct()
     {
         parent::__construct();
-        $this->userTbl = 'tb_user';
     }
+    
+    private $_table = "tb_user";
 
-    // ------------------------------------------------------------------------
+    public $id_user;
+    public $nama_user;
+    public $email;
+    public $sandi;
 
+    public function rules()
+    {
+        return [
+            ['field' => 'nama_user',
+            'label'=> 'Nama User',
+            'rules'=> 'required'],
+            
+            ['field' => 'sandi',
+            'label' => 'Sandi',
+            'rules' => 'required'],
+
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'required']
+        ];
+    }
+    
     function getRows($params = array())
     {
         $this->db->select('*');
@@ -52,29 +76,48 @@ class M_user extends CI_Model {
         return $result;
     }
 
-    public function insert($data = array())
+    public function getAll()
     {
-        //add creates and modified data if not included
-        if (!array_key_exists('tgl_dibuat', $data)) {
-            $data['tgl_dibuat'] = date("Y-m-d H:i:s");
-        }
-        if (!array_key_exists('tgl_diubah', $data)) {
-            $data['tgl_diubah'] = date("Y-m-d H:i:s");
-        }
-
-        //insert user data to users table
-        $insert = $this->db->insert($this->userTbl, $data);
-        
-        //return the status
-        if ($insert) {
-            return $this->db->insert_id();
-        } else {
-            return FALSE;
-        }    
+        return $this->db->get($this->_table)->result();
     }
+
+    public function getById($id)
+    {
+        return $this->db->get_where($this->_table, ["id_user" => $id])->row();
+    }
+
+    public function save()
+    {
+        $post = $this->input->post();
+        $this->id_user = uniqid();
+        $this->nama_user = $post['nama_user'];
+        $this->email = $post['email'];
+        $this->sandi = $post['sandi'];
+        $this->db->insert($this->_table, $this);
+    }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->id_user = $post['id'];
+        $this->nama_user = $post['nama_user'];
+        $this->email = $post['email'];
+        $this->sandi = $post['sandi'] ;
+        $this->db->update($this->_table, $this, array('id_user' => $post['id']));
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id_user" => $id));
+    }
+
+
     
 
 }
 
 /* End of file M_user.php */
+
+
+/* End of file Modal_user.php */
  ?>
