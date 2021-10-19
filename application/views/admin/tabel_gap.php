@@ -11,6 +11,7 @@
 					<tr>
 
 						<th class="">NIK Penduduk</th>
+						<th class="">Nama Penduduk</th>
 						<?php 
                                             $queryAspek = $this->db->query("
 																			select tb_aspek.id_aspek, 
@@ -33,6 +34,7 @@
                                          ?>
 					</tr>
 					<tr>
+						<th> </th>
 						<th> </th>
 						<?php 
                                             $querySubKriteria = $this->db->query("
@@ -58,6 +60,7 @@
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -66,6 +69,9 @@
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 
@@ -97,6 +103,7 @@
 
 					<tr class='bg-success'>
 						<td class='text-center'> <strong>Nilai GAP</strong> </td>
+						<td class='text-center'> <strong></strong> </td>
 						<?php 
                                             $querySubKriteria = $this->db->query("
 																			select id_sub_kriteria,
@@ -120,6 +127,7 @@
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -128,6 +136,9 @@
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 

@@ -10,6 +10,7 @@
 					<tr>
 
 						<th class="">Kode Penduduk</th>
+						<th class="">Nama Penduduk</th>
 						<?php 
 $queryAspek = $this->db->query("
 							select tb_aspek.id_aspek, 
@@ -32,6 +33,7 @@ foreach ($queryAspek->result() as $tampilAspek) {
 ?>
 					</tr>
 					<tr>
+						<th> </th>
 						<th> </th>
 						<?php 
 $querySubKriteria = $this->db->query("
@@ -57,6 +59,7 @@ foreach ($querySubKriteria->result() as $tampilSubKriteria) {
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -65,6 +68,9 @@ foreach ($querySubKriteria->result() as $tampilSubKriteria) {
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 
@@ -128,6 +134,7 @@ foreach ($querySubKriteria->result() as $tampilSubKriteria) {
 			
 					<tr class='bg-success'>
 						<td class='text-center'> <strong>x(%)</strong> </td>
+						<td class='text-center'> <strong></strong> </td>
 						<?php 
                                             $querySubKriteria = $this->db->query("
                                             SELECT id_aspek,
@@ -154,6 +161,7 @@ foreach ($querySubKriteria->result() as $tampilSubKriteria) {
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -162,6 +170,9 @@ foreach ($querySubKriteria->result() as $tampilSubKriteria) {
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 

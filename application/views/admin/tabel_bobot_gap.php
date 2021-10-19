@@ -10,6 +10,7 @@
 					<tr>
 
 						<th class="">NIK Penduduk</th>
+						<th class="">Nama Penduduk</th>
 						<?php 
 					$queryAspek = $this->db->query("
 													select tb_aspek.id_aspek, 
@@ -32,6 +33,7 @@
 				 ?>
 					</tr>
 					<tr>
+						<th> </th>
 						<th> </th>
 						<?php 
 					$querySubKriteria = $this->db->query("
@@ -57,6 +59,7 @@
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -65,6 +68,9 @@
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 
@@ -117,6 +123,7 @@
 						<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -125,6 +132,9 @@
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 

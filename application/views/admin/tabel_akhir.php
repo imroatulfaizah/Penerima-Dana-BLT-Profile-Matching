@@ -10,6 +10,7 @@
 					<tr>
 
 						<th class="">Kode Penduduk</th>
+						<th class="">Nama Penduduk</th>
 						<?php 
 
 $this->db->empty_table('tb_hasil');
@@ -41,6 +42,7 @@ foreach ($queryAspek->result() as $tampilAspek) {
 			
 					<tr class='bg-success'>
 						<td class='text-center'> <strong>x(%)</strong> </td>
+						<td class='text-center'> <strong></strong> </td>
 						<?php 
                                             $querySubKriteria = $this->db->query("
 											SELECT tb1.id_aspek as id_aspek,
@@ -69,6 +71,7 @@ foreach ($queryAspek->result() as $tampilAspek) {
 					<?php 
                                             $queryAlternatif = $this->db->query("
                                                                                 select id_alternatif,
+																				nama_alternatif,
                                                                                 kode_alternatif 
                                                                                 from tb_alternatif"); 
 
@@ -77,6 +80,9 @@ foreach ($queryAspek->result() as $tampilAspek) {
 					<tr class="text-center">
 						<td>
 							<?php echo $tampilAlternatif->kode_alternatif ?>
+						</td>
+						<td>
+							<?php echo $tampilAlternatif->nama_alternatif ?>
 						</td>
 
 						<?php 
