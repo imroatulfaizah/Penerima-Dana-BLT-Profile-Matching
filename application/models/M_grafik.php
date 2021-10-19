@@ -35,7 +35,8 @@ class M_grafik extends CI_Model
     
     public function getAll()
     {
-        $this->db->select('tb_hasil.id_hasil as id_hasil, tb_alternatif.kode_alternatif as kode_alternatif, tb_hasil.hasil as hasil');
+        $this->db->select('tb_hasil.id_hasil as id_hasil, tb_alternatif.kode_alternatif as kode_alternatif, 
+        tb_alternatif.nama_alternatif as nama_alternatif, tb_hasil.hasil as hasil');
         $this->db->from($this->_tbHasil);
         $this->db->join($this->_tbAlternatif, 'tb_alternatif.id_alternatif = tb_hasil.id_alternatif');
         $this->db->order_by("hasil", "desc");

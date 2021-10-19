@@ -40,7 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<thead class="thead-inverse text-center">
 									<tr>
 
-										<th class="">Kode Alternatif</th>
+										<th class="">NIK Penduduk</th>
+										<th class="">Nama Penduduk</th>
 										<?php 
                     $queryAspek = $this->db->query("
                                                     select tb_aspek.id_aspek, 
@@ -63,6 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  ?>
 									</tr>
 									<tr>
+										<th> </th>
 										<th> </th>
 										<?php 
                     $querySubKriteria = $this->db->query("
@@ -91,6 +93,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<tr class="text-center">
 											<td>
 												<?php echo $tampil_alternatif->kode_alternatif ?>
+											</td>
+											<td>
+												<?php echo $tampil_alternatif->nama_alternatif ?>
 											</td>
 
 											<?php foreach ($sub_kriteria as $tampil_sub_kriteria) {
@@ -132,9 +137,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</tr>
 										<?php } ?>
 										<tr>
+											<br>
 											<td>
 												<button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Proses Hitung</button>
-												<a href="<?php echo site_url('admin') ?>" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i>
+												
+											</td>
+											<td>
+											<a href="<?php echo site_url('admin') ?>" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i>
 													Kembali</a>
 											</td>
 										</tr>

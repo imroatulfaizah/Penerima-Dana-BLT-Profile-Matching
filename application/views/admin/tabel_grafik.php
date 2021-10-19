@@ -9,7 +9,8 @@
 				<thead class="thead-inverse text-center">
 					<tr>
 						<th class="">No</th>
-						<th class="">Kode Alternatif</th>
+						<th class="">NIK Penduduk</th>
+						<th class="">Nama Penduduk</th>
 						<th class="">Hasil</th>
 					</tr>
 				</thead>
@@ -22,6 +23,7 @@
 
                         <td><?php echo $no ?></td>
                         <td><?php echo $tampil->kode_alternatif ?></td>
+						<td><?php echo $tampil->nama_alternatif ?></td>
                         <td><?php echo $tampil->hasil ?></td>
 					</tr>
                 <?php
