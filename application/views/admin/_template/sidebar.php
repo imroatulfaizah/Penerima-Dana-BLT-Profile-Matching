@@ -37,11 +37,11 @@
             <i class="fas fa-fw fa-sitemap"></i>
             <span>Hasil</span></a>
         </li>
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'hasil' ? 'active': ''
+        <!-- <li class="nav-item <php echo $this->uri->segment(2) == 'hasil' ? 'active': ''
          ?>">
-          <a class="nav-link" href="<?php echo base_url('admin/tampil_user') ?>">
+          <a class="nav-link" href="<php echo base_url('admin/tampil_user') ?>">
             <i class="fas fa-fw fa-sitemap"></i>
             <span>User</span></a>
-        </li>
+        </li> -->
         
       </ul>

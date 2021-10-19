@@ -10,7 +10,7 @@
 
 					<tr>
 
-						<th class="">Kode Penduduk</th>
+						<th class="">NIK Penduduk</th>
 						<?php 
                                             $queryAspek = $this->db->query("
 																			select tb_aspek.id_aspek, 

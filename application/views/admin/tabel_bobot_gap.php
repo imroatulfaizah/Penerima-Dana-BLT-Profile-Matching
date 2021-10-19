@@ -9,7 +9,7 @@
 				<thead class="thead-inverse text-center">
 					<tr>
 
-						<th class="">Kode Alternatif</th>
+						<th class="">NIK Penduduk</th>
 						<?php 
 					$queryAspek = $this->db->query("
 													select tb_aspek.id_aspek, 
